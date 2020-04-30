@@ -4,8 +4,91 @@
 
 [full info for NPM](https://blog.bitsrc.io/a-beginners-guide-to-npm-5c021d519c4c)
 
+***
 
-- init: Helps to initialize a project by asking a series of question such as name, version, author and so on. At the end a brand new package.json file is created with that information. You also have the ability to provide a custom initializer to customize the processed to your particular stack.
+[full info about packij.json](https://dev.to/easybuoy/understanding-the-package-json-file-3fdg)
+A pack.json- ը JSON ֆայլ է, որը գոյություն ունի Javascript / Node նախագծի հիմքում: Այն պարունակում է նախագծին վերաբերող մետատվյալներ և այն օգտագործվում է ծրագրի կախվածության, սցենարների, վարկածի և այլնի կառավարման համար:
+
+Կան կանոններ որոնց պետք է հետևել
+
+- must be lowercase
+- must be one word
+- can contain hyphens and underscores
+- should not start with an underscore(_) or dot(.)
+
+ - Version   property denotes the current version of the module for the project.
+
+- description The description property is used in describing and providing more information about the project.
+
+ - engines The engines property is a JSON object of key/value pairs that are used to denote/specify the version of the libraries and runtimes on which the application should run.
+
+- dependencies The dependencies property denotes the list of the required modules/packages for your application to function. After installing a dependency, it is added to the dependencies list.To install a dependency, run npm i package or npm install package on your terminal. Where the package is the name of the package you are trying to install.
+
+- scripts
+The script property takes a JSON object of key/value pairs. Each script can be used in performing different sets of tasks, like building, testing, linting the application.
+
+- main
+The main property serves as the entry point of your application and should point to the file that serves as the entry point to your application.
+
+- homepage
+The homepage property is used to specify the landing page for the application/package.
+
+- private
+The private property is false by default but can be set to true to prevent the application/package to be published.
+
+- license
+This property denotes the type of license that's being used by the project
+
+- author
+This property denotes the creator/owner of the project
+
+- repository
+The repository keyword is a JSON object of key/value pairs that are used to specify the version control system being used to manage the application. You can specify the type of version control being used,
+the URL to the repository, as well as an optional directory within the repository.
+
+- bugs
+The bugs property is used to point to the issues page of the repository for the application or anywhere the project issues can be reported.
+
+- keywords
+The keywords property is an array of keywords that helps in identifying your project or make your project easier to find when a user searches those keywords.
+
+- Custom Properties
+The package.json file can also be used for package specific commands like Babel, ESLint, Jest and lots more. You can find the usage in the package documentation.
+Find an example of a custom property for Jest below.
+
+[whole property in packije.json see here](https://docs.npmjs.com/files/package.json)
+
+***
+
+-npm init: Helps to initialize a project by asking a series of question such as name, version, author and so on. At the end a brand new package.json file is created with that information. You also have the ability to provide a custom initializer to customize the processed to your particular stack.
+
+Սա կապ չունի git init-ի հետ:
+
+## git-init 
+ **Create an empty Git repository or reinitialize an existing one.** Most other Git commands are not available outside of an initialized repository, so this is usually the first command you'll run in a new project. Git doesn’t require you to create a repository, import files, and check out a working copy. Additionally, Git does not require any pre-existing server or admin privileges. All you have to do is cd into your project subdirectory and run git init, and you'll have a fully functional Git repository.A quick note: git init and git clone can be easily confused. At a high level, they can both be used to "initialize a new git repository." However, git clone is dependent on git init. git clone is used to create a copy of an existing repository. Internally, git clone first calls git init to create a new repository. It then copies the data from the existing repository, and checks out a new set of working files. 
+
+ Create a new git repository for an existing code base
+- cd /path/to/code \
+- git init \
+- git commit
+
+Create a new bare repository
+
+- git init --bare /path/to/repo.git
+
+**aliasian**
+- $ git config --global alias.co checkout
+- $ git config --global alias.br branch
+- $ git config --global alias.ci commit
+- $ git config --global alias.st status
+ - [alias]
+
+            - co = checkout
+            - br = branch
+            - ci = commit
+            - st = status
+
+Git aliases are a powerful workflow tool that create shortcuts to frequently used Git commands. Using Git aliases will make you a faster and more efficient developer. Aliases can be used to wrap a sequence of Git commands into new faux Git command. Git aliases are created through the use of the git config command which essentially modifies local or global Git config files.
 
 
 
@@ -478,8 +561,9 @@ git push is most commonly used to publish an upload local changes to a central r
            |
            |
 O----------O----------O-----------O
-                                  |
-                                  |
+
+                            |
+                            |
                                 Master
 
 
